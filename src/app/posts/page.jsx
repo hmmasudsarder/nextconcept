@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const getPost = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -17,6 +18,7 @@ const PostPage = async() => {
                     <div className="border-2 p-8" key={id}>
                         <h2 className="text-xl">Title: {title}</h2>
                         <h1 className="text-lg">Description : {body}</h1>
+                        <button><Link href={`/posts/${id}`} className="bg-yellow-300 px-4 py-2">See More</Link></button>
                     </div>
                 ))}
             </div>
